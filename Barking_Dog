@@ -1,0 +1,19 @@
+//The program shuold return true if the dog is barking and the hour is before 8 a.m. and after 23 p.m.
+
+public class Main {
+    public static void main(String[] args) {
+       boolean result = BarkingDog.shouldWakeUp(true, -1);
+        System.out.println(result);
+    }
+    public static boolean shouldWakeUp(boolean barking, int hourOfDay) {
+        if (hourOfDay < 0 || hourOfDay > 23){
+            return false;
+        } else{
+            if(barking && (hourOfDay < 8 || hourOfDay > 22 || hourOfDay == 0)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }
+}
