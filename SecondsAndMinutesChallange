@@ -1,0 +1,41 @@
+//The program converts minutes and seconds in format HH MM SS and prints the result; 
+
+public class Main {
+
+    private static final String INVALID_VALUE = "Invalid value";
+    public static void main(String[] args) {
+        System.out.println(getDurationString(120));
+    }
+    public static String getDurationString(int minutes, int seconds){
+        if((minutes < 0) || (seconds < 0 || seconds > 59)){
+            return INVALID_VALUE;
+        }
+        int hours = minutes / 60;
+        int remainingMinutes = minutes % 60;
+
+        String hoursToString = hours + "h";
+        if(hours < 9){
+            hoursToString = "0" + hours + "h";
+        }
+
+        String minutesToString = remainingMinutes + "h";
+        if(remainingMinutes < 9){
+            minutesToString = "0" + remainingMinutes + "h";
+        }
+
+        String secondsToString = seconds + "h";
+        if(seconds < 9){
+            secondsToString = "0" + seconds + "h";
+        }
+        return hoursToString + " " + minutesToString + " " + secondsToString;
+    }
+
+    public static String getDurationString(int seconds){
+        if(seconds < 0){
+            return INVALID_VALUE;
+        }
+        int minutes = seconds / 60;
+        int remainingSeconds = seconds % 60;
+        return getDurationString(minutes, remainingSeconds);
+    }
+}
