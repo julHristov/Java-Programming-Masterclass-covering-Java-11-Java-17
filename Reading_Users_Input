@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int numbers = 1;
+        int sum = 0;
+        while (numbers <=10){
+            System.out.println("Enter number #" + numbers);
+
+            boolean isAnInt = scanner.hasNextInt();
+
+            if(isAnInt){
+                int currentNumber = scanner.nextInt();
+                sum+=currentNumber;
+                numbers++;
+            }else{
+                System.out.println("Invalid number");
+            }
+            scanner.nextLine();
+        }
+        System.out.println("sum is = " + sum);
+        scanner.close();
+    }
+}
