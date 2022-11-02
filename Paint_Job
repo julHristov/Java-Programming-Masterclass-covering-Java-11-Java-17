@@ -1,0 +1,27 @@
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(getBucketCount(3.26, 0.75));
+    }
+    public static int getBucketCount (double width,double height,double buckets,int bucketsAtHome){
+        if(width <= 0 || height <= 0 || buckets <= 0 || bucketsAtHome < 0){
+            return -1;
+        }
+        return (int) (Math.ceil((height * width) / buckets) - bucketsAtHome);
+    }
+    public static int getBucketCount(double width,double height,double areaPerBucket){
+
+        if(width <= 0 || height <= 0 || areaPerBucket <= 0){
+            return -1;
+        }
+
+        return (int)Math.ceil(width * height / areaPerBucket);
+    }
+
+    public static int getBucketCount(double area,double areaPerBucket){
+
+        if(area <= 0 || areaPerBucket <= 0){
+            return -1;
+        }
+        return (int)Math.ceil(area/areaPerBucket);
+    }
+}
